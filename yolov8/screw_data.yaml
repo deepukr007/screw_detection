@@ -1,0 +1,8 @@
+path: Cross-Recessed-Screw_Deep-Learning-Datasets
+train: train/Training_images
+val: Validation/Test_Set_A_Images
+test: Test/Test_Set_C_Images
+
+# class names
+names:
+  0: "CRS"
