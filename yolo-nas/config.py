@@ -17,8 +17,6 @@ classes = ['CRS']
 # Global parameters.
 EPOCHS = 500
 
-
-
 dataset_params = {
     'data_dir':ROOT_DIR,
     'train_images_dir':train_imgs_dir,
@@ -33,6 +31,7 @@ dataset_params = {
 train_params = {
     'silent_mode': False,
     "average_best_models":True,
+
     "warmup_mode": "linear_epoch_step",
     "warmup_initial_lr": 1e-6,
     "lr_warmup_epochs": 3,
@@ -48,6 +47,7 @@ train_params = {
     "mixed_precision": True,
     "loss": PPYoloELoss(
         use_static_assigner=False,
+
         num_classes=len(dataset_params['classes']),
         reg_max=16
     ),
@@ -67,6 +67,7 @@ train_params = {
         DetectionMetrics_050_095(
             score_thres=0.1,
             top_k_predictions=300,
+            # NOTE: num_classes needs to be defined here
             num_cls=len(dataset_params['classes']),
             normalize_targets=True,
             post_prediction_callback=PPYoloEPostPredictionCallback(
@@ -77,6 +78,6 @@ train_params = {
             )
         )
     ],
-    "metric_to_watch": 'mAP@0.50:0.95'
-}
 
+    "metric_to_watch": 'mAP@0.50'
+}
