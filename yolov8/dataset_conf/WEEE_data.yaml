@@ -1,0 +1,8 @@
+path: /home/krishnar@iff.intern/thesis/datasets/WDSD
+train: train/images
+val: val/images
+test: test/images
+
+# class names
+names:
+  0: "CRS"

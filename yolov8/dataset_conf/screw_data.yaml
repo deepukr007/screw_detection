@@ -1,0 +1,8 @@
+path: /home/krishnar@iff.intern/thesis/datasets/crs
+train: train/images
+val: validation/images
+test: test_1/images
+
+# class names
+names:
+  0: "CRS"
